@@ -1,0 +1,7 @@
+*~
+bin/*
+bin/libs/
+include/
+obj/
+*.layout
+build
