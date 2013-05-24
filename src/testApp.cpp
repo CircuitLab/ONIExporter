@@ -36,13 +36,27 @@ void testApp::setup()
     
     ofSetLogLevel(OF_LOG_VERBOSE);
     
+    static ofxXmlSettings xml;
+    xml.loadFile(ofToDataPath("config.xml"));
+    xml.pushTag("config");
+    
+    if (PROJECT_NAME == xml.getValue("projectName", "")) {
+        outputPath = xml.getValue("outputPath", "");
+        if (0 < outputPath.length() && "/" != outputPath.substr(outputPath.length() - 1, 1)) {
+            outputPath += "/";
+        }
+    }
+    
+    ofLogVerbose("outputPath: " + outputPath);
+    
     openNIPlayer.setup();
-    openNIPlayer.setLogLevel(OF_LOG_VERBOSE);
+    openNIPlayer.setLogLevel(OF_LOG_ERROR);
     openNIPlayer.setRegister(true);
     openNIPlayer.setLooped(false);
-    
+    openNIPlayer.setFrame(30);
 
 	movieExporter.setup(NI_VIEW_WIDTH * 2, NI_VIEW_HEIGHT, movieExporter.BIT_RATE * 2, 30, CODEC_ID_MPEG4, "mp4");
+    
     movieExporter.setRecordingArea(0, 0, NI_VIEW_WIDTH * 2, NI_VIEW_HEIGHT);
     
     isRecording = false;
@@ -58,20 +72,25 @@ void testApp::update()
     openNIPlayer.update();
     
     if (isRecording) {
+        ofLogVerbose("frame rate: " + ofToString(openNIPlayer.getFrameRate()) + ", current frame: " + ofToString(openNIPlayer.getCurrentFrame()) + " / " + ofToString(openNIPlayer.getTotalNumFrames()));
+    }
+    
+    if (isRecording) {
         if (openNIPlayer.getCurrentFrame() == openNIPlayer.getTotalNumFrames()) {
             movieExporter.stop();
             openNIPlayer.setPaused(true);
+            isRecording = false;
         }
     }
-    
-//    ofLogVerbose("frame: " + ofToString(openNIPlayer.getCurrentFrame()) + " / " + ofToString(openNIPlayer.getTotalNumFrames()));
 }
 
 //--------------------------------------------------------------
 void testApp::draw()
 {
-    openNIPlayer.drawDepth(0, 0, NI_VIEW_WIDTH, NI_VIEW_HEIGHT);
-    openNIPlayer.drawImage(NI_VIEW_WIDTH, 0, NI_VIEW_WIDTH, NI_VIEW_HEIGHT);
+    if (true) {
+        openNIPlayer.drawDepth(0, 0, NI_VIEW_WIDTH, NI_VIEW_HEIGHT);
+        openNIPlayer.drawImage(NI_VIEW_WIDTH, 0, NI_VIEW_WIDTH, NI_VIEW_HEIGHT);
+    }
 }
 
 //--------------------------------------------------------------
@@ -93,10 +112,12 @@ void testApp::keyPressed(int key)
             string path = result.getPath();
             ofFile oniFile(path);
             
+            ofLogVerbose("path : " + path);
+            
             if (oniFile.exists() && "ONI" == ofToUpper(oniFile.getExtension())) {
                 oniFileName = result.getName();
                 
-                openNIPlayer.startPlayer(oniFileName);
+                openNIPlayer.startPlayer(result.getPath());
                 openNIPlayer.setPaused(true);
                 openNIPlayer.firstFrame();
                 
@@ -115,6 +136,7 @@ void testApp::keyPressed(int key)
             if (openNIPlayer.isPlaying()) {
                 if (openNIPlayer.isPaused()) {
                     openNIPlayer.firstFrame();
+                    openNIPlayer.setLooped(false);
                     openNIPlayer.setPaused(false);
                 } else {
                     openNIPlayer.setPaused(true);
@@ -127,7 +149,7 @@ void testApp::keyPressed(int key)
                 movieExporter.stop();
                 isRecording = false;
             } else {
-                movieExporter.record(ofGetTimestampString());
+                movieExporter.record(outputPath + oniFileName);
                 movieFileName = movieExporter.getOutFileName();
                 ofLogVerbose("out file name is " + movieFileName);
                 isRecording = true;

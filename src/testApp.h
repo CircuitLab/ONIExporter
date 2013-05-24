@@ -7,6 +7,7 @@
 #include "ofxFensterManager.h"
 #include "ofxStat.h"
 
+#define PROJECT_NAME "ONI Exporter"
 #define NI_VIEW_WIDTH 640
 #define NI_VIEW_HEIGHT 480
 
@@ -51,6 +52,7 @@ private:
     
 	Apex::ofxMovieExporter movieExporter;
 	ofImage testImage;
+    string outputPath;
     
     DataFolderWatcher watcher;
 };
