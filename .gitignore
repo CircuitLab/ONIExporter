@@ -1,7 +1,10 @@
 *~
-bin/*
+bin/*.app
 bin/libs/
 include/
 obj/
 *.layout
 build
+bin/data/*.oni
+bin/data/*.mp4
+bin/data/*.mov
