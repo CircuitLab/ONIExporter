@@ -150,7 +150,7 @@ void testApp::keyPressed(int key)
                 isRecording = false;
             } else {
                 movieExporter.record(outputPath + oniFileName);
-                movieFileName = movieExporter.getOutFileName();
+                movieFileName = movieExporter.outFileName();
                 ofLogVerbose("out file name is " + movieFileName);
                 isRecording = true;
             }

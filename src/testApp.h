@@ -4,22 +4,10 @@
 #include "ofxOpenNI.h"
 #include "ofxUI.h"
 #include "ofxMovieExporter.h"
-#include "ofxFensterManager.h"
-#include "ofxStat.h"
 
 #define PROJECT_NAME "ONI Exporter"
 #define NI_VIEW_WIDTH 640
 #define NI_VIEW_HEIGHT 480
-
-
-class DataFolderWatcher : public ofxStat
-{
-public:
-    void onUpdated()
-    {
-        ofLogVerbose("watcher updated");
-    }
-};
 
 
 class testApp : public ofBaseApp
