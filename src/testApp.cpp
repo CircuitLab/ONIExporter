@@ -63,7 +63,6 @@ void testApp::setup()
     
     setupGUI();
     
-    watcher.watch("");
 }
 
 //--------------------------------------------------------------
@@ -150,7 +149,7 @@ void testApp::keyPressed(int key)
                 isRecording = false;
             } else {
                 movieExporter.record(outputPath + oniFileName);
-                movieFileName = movieExporter.outFileName();
+                movieFileName = movieExporter.outFileName;
                 ofLogVerbose("out file name is " + movieFileName);
                 isRecording = true;
             }

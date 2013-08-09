@@ -31,8 +31,6 @@
 		15A3DAC8174DF68E008E4A04 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 15A3DAC4174DF664008E4A04 /* GLUT.framework */; };
 		15A3DACA174DF75F008E4A04 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A3DAC9174DF75F008E4A04 /* AGL.framework */; };
 		15A3DACC174DF784008E4A04 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A3DACB174DF784008E4A04 /* Cocoa.framework */; };
-		15A3DBED174E10CE008E4A04 /* libev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A3DBE9174E10CE008E4A04 /* libev.a */; };
-		15A3DBEE174E10CE008E4A04 /* ofxStat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A3DBEB174E10CE008E4A04 /* ofxStat.cpp */; };
 		4269601817B4D629008AF27D /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42695FE917B4D629008AF27D /* libavcodec.a */; };
 		4269601917B4D629008AF27D /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42695FEA17B4D629008AF27D /* libavdevice.a */; };
 		4269601A17B4D629008AF27D /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42695FEB17B4D629008AF27D /* libavformat.a */; };
@@ -293,17 +291,6 @@
 		15A3DAC4174DF664008E4A04 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		15A3DAC9174DF75F008E4A04 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = ../../../../../../../System/Library/Frameworks/AGL.framework; sourceTree = "<group>"; };
 		15A3DACB174DF784008E4A04 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = ../../../../../../../System/Library/Frameworks/Cocoa.framework; sourceTree = "<group>"; };
-		15A3DBDE174E10CE008E4A04 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		15A3DBE1174E10CE008E4A04 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
-		15A3DBE2174E10CE008E4A04 /* ev++.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ev++.h"; sourceTree = "<group>"; };
-		15A3DBE3174E10CE008E4A04 /* ev.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ev.h; sourceTree = "<group>"; };
-		15A3DBE4174E10CE008E4A04 /* ev_vars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ev_vars.h; sourceTree = "<group>"; };
-		15A3DBE5174E10CE008E4A04 /* ev_wrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ev_wrap.h; sourceTree = "<group>"; };
-		15A3DBE6174E10CE008E4A04 /* event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = event.h; sourceTree = "<group>"; };
-		15A3DBE7174E10CE008E4A04 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		15A3DBE9174E10CE008E4A04 /* libev.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libev.a; sourceTree = "<group>"; };
-		15A3DBEB174E10CE008E4A04 /* ofxStat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxStat.cpp; sourceTree = "<group>"; };
-		15A3DBEC174E10CE008E4A04 /* ofxStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxStat.h; sourceTree = "<group>"; };
 		42695FAB17B4D629008AF27D /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avcodec.h; sourceTree = "<group>"; };
 		42695FAC17B4D629008AF27D /* avfft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avfft.h; sourceTree = "<group>"; };
 		42695FAD17B4D629008AF27D /* dxva2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dxva2.h; sourceTree = "<group>"; };
@@ -425,7 +412,6 @@
 				15A3D7D2174DF452008E4A04 /* libXnVFeatures_1_5_2.dylib in Frameworks */,
 				15A3D7D3174DF452008E4A04 /* libXnVHandGenerator_1_5_2.dylib in Frameworks */,
 				15A3D7D4174DF452008E4A04 /* libXnVNite_1_5_2.dylib in Frameworks */,
-				15A3DBED174E10CE008E4A04 /* libev.a in Frameworks */,
 				4269601817B4D629008AF27D /* libavcodec.a in Frameworks */,
 				4269601917B4D629008AF27D /* libavdevice.a in Frameworks */,
 				4269601A17B4D629008AF27D /* libavformat.a in Frameworks */,
@@ -787,57 +773,6 @@
 			path = src;
 			sourceTree = "<group>";
 		};
-		15A3DBDD174E10CE008E4A04 /* ofxStat */ = {
-			isa = PBXGroup;
-			children = (
-				15A3DBDE174E10CE008E4A04 /* .gitignore */,
-				15A3DBDF174E10CE008E4A04 /* libev */,
-				15A3DBEA174E10CE008E4A04 /* src */,
-			);
-			name = ofxStat;
-			path = ../../../addons/ofxStat;
-			sourceTree = "<group>";
-		};
-		15A3DBDF174E10CE008E4A04 /* libev */ = {
-			isa = PBXGroup;
-			children = (
-				15A3DBE0174E10CE008E4A04 /* include */,
-				15A3DBE8174E10CE008E4A04 /* libs */,
-			);
-			path = libev;
-			sourceTree = "<group>";
-		};
-		15A3DBE0174E10CE008E4A04 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				15A3DBE1174E10CE008E4A04 /* config.h */,
-				15A3DBE2174E10CE008E4A04 /* ev++.h */,
-				15A3DBE3174E10CE008E4A04 /* ev.h */,
-				15A3DBE4174E10CE008E4A04 /* ev_vars.h */,
-				15A3DBE5174E10CE008E4A04 /* ev_wrap.h */,
-				15A3DBE6174E10CE008E4A04 /* event.h */,
-				15A3DBE7174E10CE008E4A04 /* LICENSE */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		15A3DBE8174E10CE008E4A04 /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				15A3DBE9174E10CE008E4A04 /* libev.a */,
-			);
-			path = libs;
-			sourceTree = "<group>";
-		};
-		15A3DBEA174E10CE008E4A04 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				15A3DBEB174E10CE008E4A04 /* ofxStat.cpp */,
-				15A3DBEC174E10CE008E4A04 /* ofxStat.h */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
 		42695FA517B4D629008AF27D /* ofxMovieExporter */ = {
 			isa = PBXGroup;
 			children = (
@@ -1030,7 +965,6 @@
 			isa = PBXGroup;
 			children = (
 				42695FA517B4D629008AF27D /* ofxMovieExporter */,
-				15A3DBDD174E10CE008E4A04 /* ofxStat */,
 				15A3DAB7174DF4F2008E4A04 /* ofxXmlSettings */,
 				15A3D7DF174DF492008E4A04 /* ofxUI */,
 				15A3D6BA174DF450008E4A04 /* ofxOpenNI */,
@@ -1206,7 +1140,6 @@
 				15A3DAC1174DF4F2008E4A04 /* tinyxmlerror.cpp in Sources */,
 				15A3DAC2174DF4F2008E4A04 /* tinyxmlparser.cpp in Sources */,
 				15A3DAC3174DF4F2008E4A04 /* ofxXmlSettings.cpp in Sources */,
-				15A3DBEE174E10CE008E4A04 /* ofxStat.cpp in Sources */,
 				4269602617B4D629008AF27D /* ofxMovieExporter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

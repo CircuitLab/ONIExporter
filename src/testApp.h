@@ -41,6 +41,4 @@ private:
 	Apex::ofxMovieExporter movieExporter;
 	ofImage testImage;
     string outputPath;
-    
-    DataFolderWatcher watcher;
 };
